@@ -156,8 +156,14 @@ function parseJsCodeFromPython(v: string) {
   }
 }
 
+function enableGridToolbar(props: any) {
+  return props.args.enable_quicksearch === true ||
+    props.args.manual_update ||
+    props.args.excelExportMode === "MANUAL"
+}
+
 function GridToolBar(props: any) {
-  if (true) {
+  if (enableGridToolbar(props)) {
     return (
       <div id="gridToolBar" style={{ paddingBottom: 30 }}>
         <div className="ag-row-odd ag-row-no-focus ag-row ag-row-level-0 ag-row-position-absolute">
@@ -511,10 +517,7 @@ class AgGrid<S = {}> extends React.Component<ComponentProps, S> {
   }
 
   public render = (): ReactNode => {
-    let shouldRenderGridToolbar =
-      this.props.args.enable_quicksearch === true ||
-      this.props.args.manual_update ||
-      this.props.args.excelExportMode === "MANUAL"
+    let shouldRenderGridToolbar = enableGridToolbar(this.props)
 
     return (
       <div
