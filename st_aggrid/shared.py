@@ -39,6 +39,8 @@ class AgGridTheme(BaseEnum):
     ALPINE = "alpine"
     BALHAM = "balham"
     MATERIAL = "material"
+    FLIGHTAWARE = "flightaware"
+
 
 class ExcelExportMode(BaseEnum):
     NONE = "NONE"

@@ -36,7 +36,21 @@
         header-foreground-color: #7f838a,
         font-family: "Source Sans Pro",
         font-size: 9.5pt
-
+      ),
+      flightaware: (
+        extend-theme: alpine,
+        background-color: #ffffff,
+        odd-row-background-color: #ffffff,
+        foreground-color: #00153d,
+        alpine-active-color: #0070e0,
+        grid-size: 4px,
+        header-background-color: #f2f3f5,
+        borders: solid 0.5px,
+        border-color: #eaeaeb,
+        cell-horizontal-border: solid #eaeaeb,
+        header-foreground-color: #667388,
+        font-family: "Source Sans Pro",
+        font-size: 10pt
       ),
     ),
 ));
