@@ -41,7 +41,7 @@ import { duration } from "moment"
 import { debounce, throttle } from "lodash"
 
 import { encode, decode } from "base64-arraybuffer"
-import { Buffer} from 'buffer'
+import { Buffer } from 'buffer'
 
 import "./agGridStyle.scss"
 
@@ -157,17 +157,6 @@ function parseJsCodeFromPython(v: string) {
 }
 
 function GridToolBar(props: any) {
-  if (true) {
-    return (
-      <div id="gridToolBar" style={{ paddingBottom: 30 }}>
-        <div className="ag-row-odd ag-row-no-focus ag-row ag-row-level-0 ag-row-position-absolute">
-          <div className="">
-            <div className="ag-cell-wrapper">{props.children}</div>
-          </div>
-        </div>
-      </div>
-    )
-  }
   return <></>
 }
 
@@ -307,7 +296,7 @@ class AgGrid<S = {}> extends React.Component<ComponentProps, S> {
           Buffer.from(decode(v)).toString("latin1")
         )
         params.data = data
-        
+
         this.api.exportMultipleSheetsAsExcel(params)
       }
       if (this.props.args.excel_export_mode === "TRIGGER_DOWNLOAD") {
@@ -457,8 +446,8 @@ class AgGrid<S = {}> extends React.Component<ComponentProps, S> {
       this.DownloadAsExcelIfRequested()
     }
 
-    if ((this.props.args.reload_data) && (this.api)){
-        this.api.setRowData(JSON.parse(this.props.args.row_data))
+    if ((this.props.args.reload_data) && (this.api)) {
+      this.api.setRowData(JSON.parse(this.props.args.row_data))
     }
 
 
@@ -511,10 +500,7 @@ class AgGrid<S = {}> extends React.Component<ComponentProps, S> {
   }
 
   public render = (): ReactNode => {
-    let shouldRenderGridToolbar =
-      this.props.args.enable_quicksearch === true ||
-      this.props.args.manual_update ||
-      this.props.args.excelExportMode === "MANUAL"
+    let shouldRenderGridToolbar = false
 
     return (
       <div
